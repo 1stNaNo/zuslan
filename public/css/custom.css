@@ -408,3 +408,14 @@
 .owl-wrapper {
     margin: 0 auto !important;
 }
+
+/*LOGO TEXT*/
+.logoDescripion {
+    float: left !important;
+    margin-top: 26px;
+}
+
+.logoDescripion p.logoTag {
+    color: #000;
+    font-size: 20px;
+}
