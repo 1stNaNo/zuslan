@@ -15,7 +15,7 @@
 }
 
 .logoDescripion p.logoText{
-  color: #09c;
+  color: #17883c;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -107,15 +107,15 @@
 }
 
 .latest_newsarea {
-  border-bottom: 2px solid #09c;
-  border-top: 2px solid #09c;
+  border-bottom: 2px solid #17883c;
+  border-top: 2px solid #17883c;
 }
 .latest_newsarea span {
-  background-color: #09c;
+  background-color: #17883c;
   color: #fff;
 }
 .latest_newsarea span:after, .latest_newsarea span:before { left: 100%; top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
-.latest_newsarea span:after { border-color: rgba(0, 153, 204, 0); border-left-color: #09c; border-width: 10px; margin-top: -10px; }
+.latest_newsarea span:after { border-color: rgba(0, 153, 204, 0); border-left-color: #17883c; border-width: 10px; margin-top: -10px; }
 .latest_newsarea span:before { border-color: rgba(0, 153, 204, 0); border-left-color: #0099cc; border-width: 11px; margin-top: -11px; }
 
 .single_category {
@@ -129,7 +129,7 @@
 	float: left;
 	display: inline;
 	width: 100%;
-	background: #09c;
+	background: #17883c;
 	text-align: center;
 }
 .category_title a {
@@ -353,4 +353,58 @@
 .nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
   visibility : visible\9; /* Target only IE7 and IE8 with this hack */
   opacity    : 0.99;
+}
+
+/*MAIN MENU CSS*/
+.menu-item{
+  padding : 10px;
+  border-radius : 10px;
+  text-align: center;
+}
+
+.menu-item > img{
+  max-width : 100px !important;
+  margin: auto;
+}
+
+.menu-item:hover{
+  border: solid thin #fff;
+  cursor: pointer;
+}
+
+.menu-item-active{
+  border: solid thin #fff;
+}
+
+.menu-title{
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+/*SUB MENU CSS*/
+.menu-item-sub{
+  padding : 10px;
+  border-radius : 10px;
+  text-align: center;
+}
+.menu-item-sub > img{
+  max-width : 100px !important;
+  margin: auto;
+}
+.menu-item-sub:hover{
+  border: solid thin #20c456;
+  cursor: pointer;
+}
+.menu-item-sub-active{
+  border: solid thin #20c456;
+}
+.menu-title-sub{
+  text-align: center;
+  font-size: 20px;
+  color: #20c456;
+  margin: auto;
+}
+.owl-wrapper {
+    margin: 0 auto !important;
 }

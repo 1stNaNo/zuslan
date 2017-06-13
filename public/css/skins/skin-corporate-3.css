@@ -376,7 +376,7 @@ html .btn-primary {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #0088cc;
-	border-color: #0088cc #0088cc #006699;
+	border-color: #0088cc #0088cc #157e37;
 }
 
 html .btn-primary:hover {
@@ -411,8 +411,8 @@ html .btn-primary:active:focus {
 html .btn-primary-scale-2 {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-color: #006699;
-	border-color: #006699 #006699 #004466;
+	background-color: #157e37;
+	border-color: #157e37 #157e37 #004466;
 }
 
 html .btn-primary-scale-2:hover {
@@ -773,7 +773,7 @@ html .btn-borders.btn-primary:hover,
 html .btn-borders.btn-primary:focus {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #0088cc;
-	border-color: #0088cc #0088cc #006699;
+	border-color: #0088cc #0088cc #157e37;
 	border-color: #0088cc !important;
 	color: #ffffff;
 }
@@ -1076,7 +1076,7 @@ body.dark .pagination > .active > a {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #0088cc;
-	border-color: #0088cc #0088cc #006699;
+	border-color: #0088cc #0088cc #157e37;
 }
 
 .pagination > .active > a:hover,
@@ -1211,12 +1211,12 @@ html section.section-primary p {
 }
 
 html section.section-primary-scale-2 {
-	background-color: #006699 !important;
+	background-color: #157e37 !important;
 	border-color: #b04d09 !important;
 }
 
 html section.section-primary-scale-2 .sort-source.sort-source-style-2 > li.active > a:after {
-	border-top-color: #006699;
+	border-top-color: #157e37;
 }
 
 html section.section-secondary {
@@ -1799,7 +1799,7 @@ html .inverted-light {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #0088cc;
-	border-color: #0088cc #0088cc #006699;
+	border-color: #0088cc #0088cc #157e37;
 }
 
 .owl-carousel .owl-nav [class*="owl-"]:hover {
@@ -3927,7 +3927,7 @@ html .feature-box-light.feature-box-style-6 .feature-box-icon i.icons {
 }
 
 html .featured-boxes-full-scale > [class*="col-"]:nth-child(1) .featured-box-full-primary {
-	background-color: #006699;
+	background-color: #157e37;
 }
 
 html .featured-boxes-full-scale > [class*="col-"]:nth-child(2) .featured-box-full-primary {
@@ -4259,7 +4259,7 @@ html .slider-container .tp-caption-overlay-opacity-light {
 }
 
 #footer.color .footer-ribbon {
-	background: #006699;
+	background: #157e37;
 }
 
 #footer.color .footer-ribbon:before {
@@ -4277,7 +4277,7 @@ html #footer.color-primary {
 }
 
 html #footer.color-primary .footer-ribbon {
-	background: #006699;
+	background: #157e37;
 }
 
 html #footer.color-primary .footer-ribbon:before {

@@ -36,14 +36,14 @@ html.dark .radio-primary input[type="radio"]:checked + label:after,
 
 .slider-gradient.slider-primary .ui-slider-range,
 .slider-gradient.slider-primary .ui-slider-handle {
-	background-image: -webkit-linear-gradient(left, #00aaff 0, #0088cc 50%, #006699 100%);
-	background-image: linear-gradient(left, #00aaff 0, #0088cc 50%, #006699 100%);
+	background-image: -webkit-linear-gradient(left, #00aaff 0, #0088cc 50%, #157e37 100%);
+	background-image: linear-gradient(left, #00aaff 0, #0088cc 50%, #157e37 100%);
 }
 
 .slider-gradient.ui-slider-vertical.slider-primary .ui-slider-range,
 .slider-gradient.ui-slider-vertical.slider-primary .ui-slider-handle {
-	background-image: -webkit-linear-gradient(to right, #00aaff 0, #0088cc 50%, #006699 100%);
-	background-image: linear-gradient(to right, #00aaff 0, #0088cc 50%, #006699 100%);
+	background-image: -webkit-linear-gradient(to right, #00aaff 0, #0088cc 50%, #157e37 100%);
+	background-image: linear-gradient(to right, #00aaff 0, #0088cc 50%, #157e37 100%);
 }
 /* DatePicker */
 .datepicker table {
@@ -93,7 +93,7 @@ html.dark .datepicker.datepicker-primary table tbody tr td.day.active,
 }
 
 .datepicker.datepicker-primary table thead tr:first-child th:hover {
-	background-color: #006699;
+	background-color: #157e37;
 }
 
 .datepicker.datepicker-primary table thead tr:last-child {

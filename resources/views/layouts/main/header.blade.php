@@ -76,7 +76,7 @@
   <script src="/vendo/jquery.validation/jquery.validation.js"></script>
   <script src="/vendo/jquery.stellar/jquery.stellar.js"></script>
   <script src="/vendo/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
-  {{-- <script src="/vendo/jquery.gmap/jquery.gmap.js"></script> --}}
+
   <script src="/vendo/jquery.lazyload/jquery.lazyload.js"></script>
   <script src="/vendo/isotope/jquery.isotope.js"></script>
   <script src="/vendo/owl.carousel/owl.carousel.js"></script>
