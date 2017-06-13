@@ -1,0 +1,356 @@
+/* Add here all your CSS customizations */
+.header-logo{
+  margin-left: 50px;
+}
+.headLogoCont{
+  background: none;
+  height: 106px;
+}
+.logoDescripion{
+  float: left !important;
+  margin-top: 26px;
+}
+.logoDescripion p{
+  margin: 0 !important;
+}
+
+.logoDescripion p.logoText{
+  color: #09c;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.logoDescripion p.logoTag{
+  color: #000;
+}
+.thumbnail_slider_area {
+  display: inline;
+  float: left;
+  /*margin-top: 20px;*/
+  width: 100%;
+}
+.signle_iteam {
+  position: relative;
+  padding:0px 3px;
+}
+.slider_comntbox {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 15px;
+  padding: 5px 8px;
+  position: absolute;
+  top: 10px;
+  width: auto !important;
+  z-index: 5;
+}
+.slider_comntbox>p{
+	color: #fff !important;
+	margin-bottom: 0px;
+  font-size: 10px;
+}
+.slider_comntbox>p>a{
+	color: #fff !important;
+  font-size: 10px;
+}
+.signle_iteam img{
+	width: 100%;
+  height: 100%;
+  transform: translate3d(0px, 0px, 0px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.signle_iteam:hover img {
+ /* opacity: 0.8;*/
+  -webkit-transform:scale(1.1); /* Safari and Chrome */
+  -moz-transform:scale(1.1); /* Firefox */
+  -ms-transform:scale(1.1); /* IE 9 */
+  -o-transform:scale(1.1); /* Opera */
+  transform:scale(1.1);
+}
+.owl-carousel .signle_iteam:last-child img{
+	width: 100% !important;
+}
+.slider_tittle{
+	bottom: 15px;
+	color: #fff;
+	font-size:12px;
+	left: 0;
+	line-height: 23px;
+	margin: 0 20px;
+	padding: 5px 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	width: auto;
+	z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  max-height: 52px;
+}
+.slider_tittle:hover,.slider_tittle:focus{
+	color: #fff;
+}
+
+.latest_newsarea {
+  display: inline;
+  float: left;
+  width: 100%;
+  background-color: #1b1a1a;
+}
+
+.latest_newsarea span {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 5px 25px;
+  position: absolute;
+  z-index: 20;
+}
+
+.latest_newsarea {
+  border-bottom: 2px solid #09c;
+  border-top: 2px solid #09c;
+}
+.latest_newsarea span {
+  background-color: #09c;
+  color: #fff;
+}
+.latest_newsarea span:after, .latest_newsarea span:before { left: 100%; top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
+.latest_newsarea span:after { border-color: rgba(0, 153, 204, 0); border-left-color: #09c; border-width: 10px; margin-top: -10px; }
+.latest_newsarea span:before { border-color: rgba(0, 153, 204, 0); border-left-color: #0099cc; border-width: 11px; margin-top: -11px; }
+
+.single_category {
+  background-color: #fff;
+  display: inline;
+  float: left;
+  width: 100%;
+  /*margin-top: 18px;*/
+}
+.category_title{
+	float: left;
+	display: inline;
+	width: 100%;
+	background: #09c;
+	text-align: center;
+}
+.category_title a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 7px 15px;
+  color: #fff;
+}
+.single_category_inner{
+	float: left;
+	display: inline;
+	width: 100%;
+	padding: 10px 15px;
+}
+.catg_nav{
+  padding: 0;
+}
+.catg_nav li {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  width: 48.4%;
+  margin-bottom: 5px;
+}
+.catg_nav li:nth-child(2){
+	margin-right: 0px;
+}
+.catg_nav li:nth-child(4){
+	margin-right: 0px;
+}
+.catgimg_container {
+    width:100%;
+    height: 225px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.catg1_img img {
+	height: 100%;
+	width:100%;
+	-webkit-transition: all 1s ease; /* Safari and Chrome */
+	-moz-transition: all 1s ease; /* Firefox */
+	-ms-transition: all 1s ease; /* IE 9 */
+	-o-transition: all 1s ease; /* Opera */
+	transition: all 1s ease;
+	transform: translate3d(0px, 0px, 0px);
+}
+.catg1_img:hover img {
+	opacity: 0.8;
+	-webkit-transform:scale(1.1); /* Safari and Chrome */
+	-moz-transform:scale(1.1); /* Firefox */
+	-ms-transform:scale(1.1); /* IE 9 */
+	-o-transform:scale(1.1); /* Opera */
+	transform:scale(1.1);
+}
+.catg_title{
+	color: #111;
+	display: block;
+	font-size: 14px;
+	line-height: 23px;
+	margin-bottom: 7px;
+}
+.catg_title:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  content: "";
+	margin-right: 5px;
+}
+.sing_commentbox{
+	float: left;
+	display: inline;
+	width: 100%;
+}
+.sing_commentbox > p {
+  color: #888;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+.sing_commentbox > p i{
+	margin-right: 5px;
+}
+.sing_commentbox>a{
+	color: #888;
+	font-size: 11px;
+	font-weight: normal;
+}
+.sing_commentbox>a i{
+	margin-right: 5px;
+}
+.catg_nav2 .catgimg_container{
+	height: 300px;
+}
+.post-summary {
+  color: #9b9b9b;
+  line-height: 18px;
+  margin: 10px 5px 10px 0;
+}
+.category_three_fourarea{
+	float: left;
+	display: inline;
+	width: 100%;
+}
+.category_three{
+	float: left;
+	display: inline;
+	width: 48%;
+}
+.category_four{
+	float: right;
+	display: inline;
+	width: 48%;
+}
+.catg_nav3 li{
+	width: 100%;
+}
+.catg_nav3 .catgimg_container {
+  width:100%;
+}
+.catg3_bottompost{
+	float: left;
+	display: inline;
+	width: 100%;
+	margin-top: 10px;
+}
+.catg3_snav li {
+  border-top: 1px solid #f1f1f1;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.catg3_snav .media-left{
+	width: 70px;
+	height: 70px;
+}
+.catg3_snav .media-left:hover{
+	opacity: 0.75;
+}
+.catg3_snav .media-left>img{
+	width: 100%;
+	height: 100%;
+}
+.catg5_nav li {
+  border-top: medium none;
+  float: left;
+  padding-bottom: 0;
+  padding-top: 5px;
+  width: 49%;
+}
+.font12{
+  font-size: 12px !important;
+}
+.sumsTitle{
+  /*white-space: pre-wrap;*/
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  word-wrap: break-word;
+  height: 50px;
+  font-size: 12px;
+  line-height: 17px;
+  overflow: hidden;
+}
+
+/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  display: none;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  display: block;
+}
+.nano > .nano-pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
