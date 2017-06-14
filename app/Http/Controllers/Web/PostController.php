@@ -17,6 +17,7 @@ class PostController extends Controller
   }
 
   public function postbycategory(Request $request){
+
     $news = Vw_news::byCategoryList($request->id)->orderBy('insert_date', 'desc')->paginate(2);
     $category = Vw_category::equalListById($request->id)->first();
     $resultType = '';

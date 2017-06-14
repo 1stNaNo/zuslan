@@ -39,18 +39,8 @@ class MenuComposer
      */
     public function compose(View $view)
     {
-      $cur_lang = Language::where('lang_key', Session::get('lang'))->first();
-      $langs = Language::all();
-      $categories = Vw_category::fromViewShowed()->orderBy('parent_id')->orderBy('order_num', 'asc');
-
-      $banner = new Banner;
-      $banner = $banner->orderBy('banner_id','desc')->first();
-
-      $fb = Link::byType('facebook')->first();
-      $tw = Link::byType('twitter')->first();
-
-      $title = Vw_title::where('lang', \Session::get("lang"))->first();
-
-      return $view->with(compact('categories', 'langs', 'cur_lang', 'banner','fb','tw', 'title'));
+      $categories = Vw_category::fromViewShowed()->where('parent_id', 0)->orderBy('parent_id')->orderBy('order_num', 'asc');
+      $subcategories = Vw_category::fromViewShowed()->where('parent_id', '<>', 0)->orderBy('parent_id')->orderBy('order_num', 'asc');
+      return $view->with(compact('categories', 'subcategories'));
     }
 }

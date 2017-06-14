@@ -4,14 +4,14 @@
 	<body>
 		<div class="body">
       <!-- HEADER -->
-      <header id="header" data-plugin-options='{"stickyEnabled": false, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
+      <header id="header" class="hidden-xs" data-plugin-options='{"stickyEnabled": false, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
         <div class="header-body">
           <div class="header-container container">
             <div class="header-row">
               <div class="header-column">
                 <div class="header-logo">
                   <a href="/">
-                    <img alt="" width="60" height="60" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="img/logo-niislel.gif">
+                    <img alt="" width="60" height="60" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="/img/logo-niislel.gif">
                   </a>
                 </div>
                 <div class="logoDescripion">
@@ -52,52 +52,48 @@
       <div class="row" style="background: #20c456">
         <div class="col-md-12">
           <div class="owl-carousel owl-theme stage-margin" data-plugin-options='{"items": 6, "margin": 10, "loop": true, "nav": true, "dots": false, "stagePadding": 40}' style="margin-top: 20px;">
-            <div class="menu-item">
-              <img alt="" class="img-responsive" src="img/menu/zuslan.png">
-              <div class="menu-title">Зуслан</div>
-            </div>
-            <div class="menu-item">
-              <img alt="" class="img-responsive" src="img/menu/baigali_orchin.png">
-              <div class="menu-title">Байгаль орчин</div>
-            </div>
-            <div class="menu-item">
-              <img alt="" class="img-responsive" src="img/menu/uilchilgee.png">
-              <div class="menu-title">Зуслангийн бүсэд төрөөс үзүүлэх үйлчилгээ</div>
-            </div>
-            <div class="menu-item">
-              <img alt="" class="img-responsive" src="img/menu/hailt.png">
-              <div class="menu-title">Хайлт</div>
-            </div>
-            <div class="menu-item menu-item-active">
-              <img alt="" class="img-responsive" src="img/menu/tohijilt.png">
-              <div class="menu-title">Тохижилт</div>
-            </div>
-            <div class="menu-item">
-              <img alt="" class="img-responsive" src="img/menu/medlegt.png">
-              <div class="menu-title">Таны мэдлэгт</div>
-            </div>
+            @php
+              $chk = clone $subcategories;
+              $tmpchk = null;
+            @endphp
+            @foreach($categories->get() as $c)
+              @php $tmpchk = clone $chk; @endphp
+              @if(count($tmpchk->where('parent_id',$c->ca_id)->get()) == 0)
+                @if(!empty($c->url))
+                <a target="{{$c->target}}" href="{{$c->url}}" style="text-decoration: none;">
+                @else
+                <a target="{{$c->target}}" href="/category/{{$c->ca_id}}" style="text-decoration: none;">
+                @endif
+              @else
+                <a target="{{$c->target}}" href="#" onclick="showSubMenu({{$c->ca_id}})" style="text-decoration: none;">
+              @endif
+              <div class="menu-item">
+                <img alt="" class="img-responsive" src="/{{$c->img}}">
+                <div class="menu-title">{{$c->source}}</div>
+              </div>
+            </a>
+            @endforeach
           </div>
         </div>
       </div>
 
       <!-- SUBMENU -->
-      <div class="row" style="background: #fff">
+      <div class="row" style="background: #fff; display:none;" id="sub-menu-container">
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <div class="owl-carousel owl-theme stage-margin" data-plugin-options='{"items": 3, "margin": 10, "loop": false, "nav": true, "dots": false, "stagePadding": 40}' style="margin-top: 20px;">
-
-            <div class="menu-item-sub">
-              <img alt="" class="img-responsive" src="img/submenu/baiguullagiin_tuhai.png">
-              <div class="menu-title-sub">Байгууллагын тухай</div>
-            </div>
-            <div class="menu-item-sub">
-              <img alt="" class="img-responsive" src="img/submenu/zuslangiin_bus.png">
-              <div class="menu-title-sub">Зуслангын бүс</div>
-            </div>
-            <div class="menu-item-sub">
-              <img alt="" class="img-responsive" src="img/submenu/aan_medeelel.png">
-              <div class="menu-title-sub">Зуслангийн бүсэд үйл ажиллагаа эрхлэж буй ААН мэдээлэл</div>
-            </div>
+            @foreach($subcategories->get() as $sc)
+              @if(!empty($sc->url))
+              <a target="{{$sc->target}}" href="{{$sc->url}}" style="text-decoration: none;">
+              @else
+              <a target="{{$sc->target}}" href="/category/{{$sc->ca_id}}" style="text-decoration: none;">
+              @endif
+              <div class="menu-item-sub sub-item-{{$sc->parent_id}}">
+                <img alt="" class="img-responsive" src="/{{$sc->img}}">
+                <div class="menu-title-sub">{{$sc->source}}</div>
+              </div>
+            </a>
+            @endforeach
 
           </div>
         </div>
@@ -111,5 +107,12 @@
       </div>
 		</div>
 	</body>
+  <script>
+   function showSubMenu(parent_id){
+     $('.menu-item-sub').parent().hide();
+     $('#sub-menu-container').slideDown('fast');
+     $('.sub-item-'+parent_id).parent().fadeIn('fast');
+   }
+  </script>
   @include('layouts.main.foot')
 </html>

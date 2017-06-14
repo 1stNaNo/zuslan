@@ -1,4 +1,4 @@
-@extends('layouts.main.main_noslide')
+@extends('layouts.main.main')
 
 @section('content')
 
@@ -17,9 +17,14 @@
     </div>
   </div>
 </section>
+<div class="col-md-2"></div>
+<div class="blog-posts col-md-8">
 
-<div class="blog-posts">
-
+  @if(count($news) == 0)
+    <div style="text-align:center;">
+      <h1>Мэдээлэл байхгүй байна.</h1>
+    </div>
+  @else
   @foreach($news as $n)
 
     <article class="post post-large">
@@ -49,6 +54,7 @@
     </article>
   @endforeach
 
+
   <ul class="pagination pagination-md pull-right">
     @if ($news->lastPage() > 1)
       <li><a href="{{ ($news->currentPage() == 1) ? '#' : $news->url(1) }}{{ ($resultType == 'search') ? '&keyword='.$keyword : '' }}">«</a></li>
@@ -63,6 +69,7 @@
     @endif
 
   </ul>
+  @endif
 
 </div>
 

@@ -1,10 +1,10 @@
-@extends('layouts.main.main_noslide')
+@extends('layouts.main.main')
 
 @section('content')
+<div class="col-md-2"></div>
+<div class="blog-posts col-md-8">
 
-<div class="blog-posts">
-
-    <article class="post post-large">
+    <article class="post">
 
       <div class="post-image">
         <span class="thumb-info thumb-info-hide-wrapper-bg">

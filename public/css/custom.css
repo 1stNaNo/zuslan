@@ -360,6 +360,7 @@
   padding : 10px;
   border-radius : 10px;
   text-align: center;
+    border: solid thin #20c456;
 }
 
 .menu-item > img{
@@ -387,6 +388,7 @@
   padding : 10px;
   border-radius : 10px;
   text-align: center;
+  border: solid thin #fff;
 }
 .menu-item-sub > img{
   max-width : 100px !important;
