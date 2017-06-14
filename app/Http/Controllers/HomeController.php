@@ -28,7 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-      
-      return \View::make('index');
+      $news = Vw_news::latestNews()->paginate(9);
+      $viewnews = Vw_news::mostViewed()->get();
+      $commentnews = Vw_news::mostComment()->get();
+      return \View::make('index')->with(compact('news', 'viewnews', 'commentnews'));
     }
 }
