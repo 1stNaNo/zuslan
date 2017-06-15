@@ -89,4 +89,5 @@
   <script src="/js/jquery.li-scroller.1.0.js"></script>
   <script src="https://cdn3.devexpress.com/jslib/16.1.7/js/dx.viz.js"></script>
   <script src="/js/jquery.nanoscroller.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAUWXzw9Zx2uyGDcCsGiYu3mKHhqN_00&sensor=false"></script>
 </head>

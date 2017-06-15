@@ -246,3 +246,7 @@ Route::group(['prefix' => 'messages'], function () {
     Route::post('/show', 'Sys\MessageController@showMessages');
     Route::post('/post', 'Sys\MessageController@postMessage');
 });
+
+// PHONE ROUTE
+Route::any('/phone/get/map', 'HomeController@getMaps');
+Route::any('/phone/map', 'HomeController@phoneMap');

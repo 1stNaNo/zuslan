@@ -242,7 +242,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Laracurl'  =>  Zjango\Laracurl\Facades\Laracurl::class,
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
-
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
     'Datatables' => Yajra\Datatables\Facades\Datatables::class,

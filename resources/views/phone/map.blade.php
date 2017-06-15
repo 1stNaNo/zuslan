@@ -1,60 +1,3 @@
-@extends('layouts.main.main')
-
-@section('content')
-
-<div class="row">
-  <div class="col-md-12">
-    <div id="floating-panel">
-      <b>Газрууд: </b>
-      <select id="start">
-        @foreach ($mapCategory as $item)
-          <option value="{{$item->id}}">{{$item->value}}</option>
-        @endforeach
-      </select>
-
-      <style>
-        #floating-panel {
-          position: absolute;
-          top: 10px;
-          left: 25%;
-          z-index: 5;
-          background-color: #fff;
-          padding: 5px;
-          border: 1px solid #999;
-          text-align: center;
-          font-family: 'Roboto','sans-serif';
-          line-height: 30px;
-          padding-left: 10px;
-        }
-      </style>
-    </div>
-    <div id="floating-panel-left">
-
-      <style>
-        #floating-panel-left {
-          position: absolute;
-          top: 50px;
-          left: 2%;
-          z-index: 5;
-          max-height: 320px;
-          overflow: scroll;
-          background-color: #fff;
-          padding: 5px;
-          border: 1px solid #999;
-          text-align: left;
-          font-family: 'Roboto','sans-serif';
-          line-height: 30px;
-          padding-left: 10px;
-        }
-
-        #floating-panel-left div{
-          border-bottom: solid 1px grey;
-          cursor: pointer;
-          font-size: 12px;
-          line-height: 18px;
-        }
-      </style>
-    </div>
     <div id="map" style="height: 400px;"></div>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -63,13 +6,16 @@
 
         var map;
         var currentLocation;
-        var cityCircle;
         var markers = {};
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        var matrixService = new google.maps.DistanceMatrixService;
+        var directionsService;
+        var directionsDisplay;
+        var matrixService;
 
         function initMap() {
+
+          directionsService = new google.maps.DirectionsService;
+          directionsDisplay = new google.maps.DirectionsRenderer;
+          matrixService = new google.maps.DistanceMatrixService;
 
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
@@ -132,7 +78,23 @@
                 alert('Error was: ' + status);
               } else {
                 var result = response.rows[0].elements[0];
-                $('#floating-panel-left').append('<div onclick="getRoute({{$item->id}})"> Нэр: {{$item->name}} </br>' +'Зай: '+ result.distance.text +'</br>Хугацаа: '+ result.duration.text +"</div>");
+
+                var html = '';
+
+                html += '<li>';
+                html +=  '<a href="#" class="item-link item-content" onclick="getRoute({{$item->id}})">';
+                html +=    '<div class="item-inner">';
+                html +=      '<div class="item-title-row">';
+                html +=        '<div class="item-title">Нэр: {{$item->name}} </div>';
+                html +=      '</div>';
+                html +=      '<div class="item-subtitle">Зай: '+ result.distance.text +'</div>';
+                html +=      '<div class="item-text">Хугацаа: '+ result.duration.text +'</div>';
+                html +=    '</div>';
+                html +=  '</a>';
+                html += '</li>';
+
+
+                $("#mapList").append(html);
               }
             });
 
@@ -171,6 +133,10 @@
         }
 
         function getRoute(id){
+
+          var myApp = new Framework7();
+
+          myApp.closePanel('right');
           closeInfo();
           markers[id]["info"].open(map, markers[id]["marker"]);
           directionsService.route({
@@ -184,6 +150,7 @@
               },
               travelMode: 'DRIVING'
           }, function(response, status) {
+            console.log(status);
               if (status === 'OK') {
                   directionsDisplay.setDirections(response);
               } else {
@@ -236,93 +203,3 @@
           }
         }
     </script>
-  </div>
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
-    <div class="row">
-      <div class="feature-box">
-        <!-- ICON -->
-        <div class="feature-box-icon">
-          <i class="fa fa-star"></i>
-        </div>
-        <div class="feature-box-info">
-        <!-- TITLE -->
-          <div class="heading heading-secondary heading-border heading-bottom-border">
-            <h1 class="heading-quaternary">
-              <strong>Шинэ</strong> мэдээ
-            </h1>
-          </div>
-
-        </div>
-
-        <div class="owl-carousel owl-theme stage-margin owl-loaded owl-drag owl-carousel-init" data-plugin-options='{"items": 2, "margin": 10, "loop": true, "nav": true, "dots": true, "stagePadding": 40}'>
-          @foreach($news as $n)
-          <div>
-            <a class="text-decoration-none block-link pt-md" href="/post/{{$n->id}}">
-              <span class="thumb-info thumb-info-centered-info">
-                <span class="thumb-info-wrapper">
-                  <img alt="" class="img-responsive img-rounded" src="{{$n->thumbnail}}">
-                  <span class="thumb-info-title">
-                    <span class="thumb-info-inner">
-                      <i class="fa fa-commenting-o"></i> {{$n->comment_count}} &nbsp; &nbsp; <i class="fa fa-eye"></i> {{$n->views}}
-                    </span>
-                  </span>
-                  <span class="thumb-info-action">
-                  </span>
-                </span>
-              </span>
-              <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; ">{{$n->title}}</p>
-            </a>
-          </div>
-          @endforeach
-
-        </div>
-      </div>
-    </div>
-  <!-- LASTEST NEWS END -->
-    <hr>
-  <!-- MOST VIEW NEWS START -->
-    <div class="row">
-      <div class="feature-box">
-        <!-- ICON -->
-        <div class="feature-box-icon">
-          <i class="fa fa-eye"></i>
-        </div>
-        <div class="feature-box-info">
-        <!-- TITLE -->
-          <div class="heading heading-secondary heading-border heading-bottom-border">
-            <h1 class="heading-quaternary">
-              Их <strong>уншсан</strong>
-            </h1>
-          </div>
-
-        </div>
-
-        <div class="owl-carousel owl-theme stage-margin owl-loaded owl-drag owl-carousel-init" data-plugin-options='{"items": 2, "margin": 10, "loop": true, "nav": true, "dots": true, "stagePadding": 40}'>
-          @foreach($viewnews as $n)
-          <div>
-            <a class="text-decoration-none block-link pt-md" href="/post/{{$n->id}}">
-              <span class="thumb-info thumb-info-centered-info">
-                <span class="thumb-info-wrapper">
-                  <img alt="" class="img-responsive img-rounded" src="{{$n->thumbnail}}">
-                  <span class="thumb-info-title">
-                    <span class="thumb-info-inner">
-                      <i class="fa fa-commenting-o"></i> {{$n->comment_count}} &nbsp; &nbsp; <i class="fa fa-eye"></i> {{$n->views}}
-                    </span>
-                  </span>
-                  <span class="thumb-info-action">
-                  </span>
-                </span>
-              </span>
-              <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; ">{{$n->title}}</p>
-            </a>
-          </div>
-          @endforeach
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-@endsection
