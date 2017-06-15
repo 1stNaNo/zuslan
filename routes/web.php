@@ -246,3 +246,7 @@ Route::group(['prefix' => 'messages'], function () {
     Route::post('/show', 'Sys\MessageController@showMessages');
     Route::post('/post', 'Sys\MessageController@postMessage');
 });
+
+Route::get('/search', 'Web\PostController@searchindex')->middleware('lang');
+Route::get('/mail', 'Web\MailController@index');
+Route::post('/sendmail', 'Web\MailController@sendmail');

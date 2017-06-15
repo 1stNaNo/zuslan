@@ -57,4 +57,8 @@ class PostController extends Controller
     return \View::make('web.postbycategory', ['news'=>$news, 'resultType'=>'search', 'keyword'=> $request->keyword]);
   }
 
+  public function searchindex(Request $request){
+    return view('web.search');
+  }
+
 }

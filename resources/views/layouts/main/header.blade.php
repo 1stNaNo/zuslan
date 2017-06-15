@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>{{trans('resource.logoText')}}</title>
+  <title></title>
 
   <meta name="keywords" content="{{trans('resource.logoText')}}" />
   <meta name="description" content="{{trans('resource.logoText')}} {{trans('resource.logoTag')}}">
