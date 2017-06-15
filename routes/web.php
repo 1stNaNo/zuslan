@@ -250,6 +250,7 @@ Route::group(['prefix' => 'messages'], function () {
 
 Route::any('/phone/get/map', 'HomeController@getMaps');
 Route::any('/phone/map', 'HomeController@phoneMap');
+Route::any('/phone/mail', 'HomeController@phoneMail');
 
 Route::get('/search', 'Web\PostController@searchindex')->middleware('lang');
 Route::get('/mail', 'Web\MailController@index');

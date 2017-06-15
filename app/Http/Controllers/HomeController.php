@@ -52,4 +52,8 @@ class HomeController extends Controller
       \Debugbar::disable();
       return \View::make('phone.map')->with(compact('map','mapCategory'));
     }
+
+    public function phoneMail(){
+      return view('phone.mail');
+    }
 }
