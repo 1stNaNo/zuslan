@@ -1,4 +1,4 @@
-@extends('layouts.main.main_noslide')
+@extends('layouts.main.main')
 
 @section('content')
 

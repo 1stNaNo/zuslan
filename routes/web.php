@@ -247,6 +247,10 @@ Route::group(['prefix' => 'messages'], function () {
     Route::post('/post', 'Sys\MessageController@postMessage');
 });
 
-// PHONE ROUTE
+
 Route::any('/phone/get/map', 'HomeController@getMaps');
 Route::any('/phone/map', 'HomeController@phoneMap');
+
+Route::get('/search', 'Web\PostController@searchindex')->middleware('lang');
+Route::get('/mail', 'Web\MailController@index');
+Route::post('/sendmail', 'Web\MailController@sendmail');

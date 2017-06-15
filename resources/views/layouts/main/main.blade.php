@@ -22,9 +22,9 @@
               <div class="header-column">
                 <div class="header-row">
                   <div class="header-search hidden-xs">
-                    <form id="searchForm" action="page-search-results.html" method="get">
+                    <form id="searchForm" action="/listsearch" method="get">
                       <div class="input-group">
-                        <input type="text" class="form-control" name="q" id="q" placeholder="Хайлт..." required>
+                        <input type="text" class="form-control" name="keyword" id="q" placeholder="Хайлт..." required>
                         <span class="input-group-btn">
                           <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                         </span>
