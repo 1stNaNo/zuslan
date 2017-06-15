@@ -91,6 +91,7 @@
 <script src="/assets/ckeditor/adapters/jquery.js"></script>
 <script src="/assets/vendor/modernizr/modernizr.js"></script>
 <script src="/assets/socketio/socket.io.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAUWXzw9Zx2uyGDcCsGiYu3mKHhqN_00"></script>
 </head>
 <body>
 <section class="body">
@@ -408,6 +409,25 @@
                   <li>
                     <a href="/admin/external">
                        {{trans('resource.main.external')}}
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-parent">
+                <a>
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>{{trans('Газар')}}</span>
+                </a>
+                <ul class="nav nav-children">
+                  <li>
+                    <a href="/sys/mapcat">
+                       {{trans('Газрын төрөл')}}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/sys/map">
+                       {{trans('Газрууд')}}
                     </a>
                   </li>
                 </ul>

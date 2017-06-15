@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Sys;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Sys\SysMaster;
+use App\Models\Sys\MapCategory;
 use Datatables;
 use Validator;
 
-class MastersController extends Controller
+class MapCatController extends Controller
 {
   public function __construct(){
     $this->middleware('lang');
@@ -16,16 +16,16 @@ class MastersController extends Controller
   }
 
   public function index(){
-    return view('sys.masters_list');
+    return view('sys.mapcat_list');
   }
 
   public function edit(Request $request){
-    $sysMaster = new SysMaster;
+    $mapCategory = new MapCategory;
     if(!empty($request->id)){
-      $sysMaster = SysMaster::find($request->id);
+      $mapCategory = MapCategory::find($request->id);
     }
 
-    return view('sys.masters')->with(compact('sysMaster'));
+    return view('sys.mapcat')->with(compact('mapCategory'));
   }
 
   public function save(Request $request){
@@ -39,14 +39,13 @@ class MastersController extends Controller
       return response()->json($validator->messages(), 200);
     }else{
       if(!empty($request->id)){
-        $sysMaster = SysMaster::find($request->id);
+        $mapCategory = MapCategory::find($request->id);
       }else{
-        $sysMaster = new SysMaster;
+        $mapCategory = new MapCategory;
       }
 
-      $sysMaster->name = $request->name;
-      $sysMaster->type = $request->type;
-      $sysMaster->save();
+      $mapCategory->value = $request->name;
+      $mapCategory->save();
 
       return response()->json(['type' => 'success']);
     }
@@ -56,8 +55,8 @@ class MastersController extends Controller
   public function remove(Request $request){
 
       if(!empty($request->id)){
-        $sysMaster = SysMaster::find($request->id);
-        $sysMaster->delete();
+        $mapCategory = MapCategory::find($request->id);
+        $mapCategory->delete();
       }
 
       return response()->json(['type' => 'success']);
@@ -65,7 +64,7 @@ class MastersController extends Controller
   }
 
   public function datalist(){
-    return Datatables::of(SysMaster::all())->make(true);
+    return Datatables::of(MapCategory::all())->make(true);
   }
 
 }

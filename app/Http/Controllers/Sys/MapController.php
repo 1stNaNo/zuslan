@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Sys;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Sys\SysClient;
+use App\Models\Sys\Map;
+use App\Models\Sys\MapCategory;
+use App\Models\Sys\Views\Vw_sys_map;
 use Datatables;
 use Validator;
 
-class ClientsController extends Controller
+class MapController extends Controller
 {
   public function __construct(){
     $this->middleware('lang');
@@ -16,16 +18,18 @@ class ClientsController extends Controller
   }
 
   public function index(){
-    return view('sys.clients_list');
+    return view('sys.map_list');
   }
 
   public function edit(Request $request){
-    $sysClient = new SysClient;
+    $map = new Map;
     if(!empty($request->id)){
-      $sysClient = SysClient::find($request->id);
+      $map = Map::find($request->id);
     }
 
-    return view('sys.clients')->with(compact('sysClient'));
+    $mapCategory = MapCategory::all();
+
+    return view('sys.map')->with(compact('map','mapCategory'));
   }
 
   public function save(Request $request){
@@ -39,13 +43,17 @@ class ClientsController extends Controller
       return response()->json($validator->messages(), 200);
     }else{
       if(!empty($request->id)){
-        $sysClient = SysClient::find($request->id);
+        $map = Map::find($request->id);
       }else{
-        $sysClient = new SysClient;
+        $map = new Map;
       }
 
-      $sysClient->name = $request->name;
-      $sysClient->save();
+      $map->cat_id = $request->cat_id;
+      $map->name = $request->name;
+      $map->latitude = $request->latitude;
+      $map->longitude = $request->longitude;
+      $map->radius = $request->radius;
+      $map->save();
 
       return response()->json(['type' => 'success']);
     }
@@ -55,8 +63,8 @@ class ClientsController extends Controller
   public function remove(Request $request){
 
       if(!empty($request->id)){
-        $sysClient = SysClient::find($request->id);
-        $sysClient->delete();
+        $map = Map::find($request->id);
+        $map->delete();
       }
 
       return response()->json(['type' => 'success']);
@@ -64,7 +72,7 @@ class ClientsController extends Controller
   }
 
   public function datalist(){
-    return Datatables::of(SysClient::all())->make(true);
+    return Datatables::of(Vw_sys_map::all())->make(true);
   }
 
 }

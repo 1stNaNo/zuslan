@@ -194,67 +194,26 @@ Route::post('/admin/userremove', 'Admin\UsersController@remove');
 
 // ---- END FILE USERS -------------
 
-// ---- BEGIN CLIENTS USERS -------------
+// ---- BEGIN MAP CATEGORY -------------
 
-Route::get('/sys/clients', 'Sys\ClientsController@index');
-Route::get('/sys/clients/list', 'Sys\ClientsController@datalist');
-Route::post('/sys/clients/edit', 'Sys\ClientsController@edit');
-Route::post('/sys/clients/save', 'Sys\ClientsController@save');
-Route::post('/sys/clients/remove', 'Sys\ClientsController@remove');
-
-// ---- END CLIENTS USERS -------------
-
-// ---- BEGIN MASTER -------------
-
-Route::get('/sys/masters', 'Sys\MastersController@index');
-Route::get('/sys/masters/list', 'Sys\MastersController@datalist');
-Route::post('/sys/masters/edit', 'Sys\MastersController@edit');
-Route::post('/sys/masters/save', 'Sys\MastersController@save');
-Route::post('/sys/masters/remove', 'Sys\MastersController@remove');
+Route::get('/sys/mapcat', 'Sys\MapCatController@index');
+Route::get('/sys/mapcat/list', 'Sys\MapCatController@datalist');
+Route::post('/sys/mapcat/edit', 'Sys\MapCatController@edit');
+Route::post('/sys/mapcat/save', 'Sys\MapCatController@save');
+Route::post('/sys/mapcat/remove', 'Sys\MapCatController@remove');
 
 // ---- END MASTER -------------
 
-// ---- BEGIN PRODUCT -------------
 
-Route::get('/sys/product', 'Sys\ProductController@index');
-Route::get('/sys/product/list', 'Sys\ProductController@datalist');
-Route::post('/sys/product/edit', 'Sys\ProductController@edit');
-Route::post('/sys/product/save', 'Sys\ProductController@save');
-Route::post('/sys/product/remove', 'Sys\ProductController@remove');
+// ---- BEGIN MAP -------------
 
-// ---- END PRODUCT -------------
+Route::get('/sys/map', 'Sys\MapController@index');
+Route::get('/sys/map/list', 'Sys\MapController@datalist');
+Route::post('/sys/map/edit', 'Sys\MapController@edit');
+Route::post('/sys/map/save', 'Sys\MapController@save');
+Route::post('/sys/map/remove', 'Sys\MapController@remove');
 
-
-// ---- BEGIN PRODUCT -------------
-
-Route::get('/sys/product/type', 'Sys\ProductTypeController@index');
-Route::get('/sys/product/type/list', 'Sys\ProductTypeController@datalist');
-Route::post('/sys/product/type/edit', 'Sys\ProductTypeController@edit');
-Route::post('/sys/product/type/save', 'Sys\ProductTypeController@save');
-Route::post('/sys/product/type/remove', 'Sys\ProductTypeController@remove');
-
-// ---- END PRODUCT -------------
-
-// ---- BEGIN ORDER -------------
-
-Route::get('/sys/order', 'Sys\OrderController@index');
-Route::post('/sys/orderregister', 'Sys\OrderController@indexOrderRegister');
-Route::post('/sys/orderconf', 'Sys\OrderController@indexOrderConf');
-Route::post('/sys/order/save', 'Sys\OrderController@ordersave');
-Route::get('/sys/order/data', 'Sys\OrderController@orderdata');
-Route::post('/sys/order/opdata', 'Sys\OrderController@opdata');
-Route::post('/sys/order/opsplitdata', 'Sys\OrderController@opsplitdata');
-
-
-// ---- END ORDER -------------
-
-
-// ---- BEGIN INTERVAL -------------
-
-Route::get('/sys/interval', 'Sys\IntervalController@index');
-Route::post('/sys/interval/save', 'Sys\IntervalController@save');
-
-// ---- END INTERVAL -------------
+// ---- END MASTER -------------
 
 
 Route::get('/admin/icons', function () {

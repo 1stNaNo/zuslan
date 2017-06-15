@@ -5,18 +5,20 @@ namespace App\Models\Sys;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SysProduct
+ * Class Map
  */
-class SysProduct extends Model
+class Map extends Model
 {
-    protected $table = 'sys_product';
+    protected $table = 'map';
 
     public $timestamps = false;
 
     protected $fillable = [
+        'cat_id',
         'name',
-        'split',
-        'cat'
+        'latitude',
+        'longitude',
+        'radius'
     ];
 
     protected $guarded = [];

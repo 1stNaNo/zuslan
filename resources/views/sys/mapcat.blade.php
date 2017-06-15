@@ -1,5 +1,5 @@
 
-<div id="window_clientsRegister" class="page-window">
+<div id="window_mapCatRegister" class="page-window">
   <input type="hidden" class="prev_window"/>
   <div class="row">
       <div class="col-lg-12">
@@ -10,26 +10,25 @@
                 <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
               </div>
 
-              <h2 class="panel-title">{{trans('resource.sys.company')}}</h2>
+              <h2 class="panel-title">{{trans('Газрын төрөл')}}</h2>
             </header>
             <div class="panel-body">
-              <form action="" id="clientsRegister_form" class="form-horizontal form-bordered" enctype="multipart/form-data">
+              <form action="" id="mapcatRegister_form" class="form-horizontal form-bordered" enctype="multipart/form-data">
 
-                <input type="hidden" name="id" value="{{ (!empty($sysClient)) ? $sysClient->id : '' }}"/>
+                <input type="hidden" name="id" value="{{ (!empty($mapCategory)) ? $mapCategory->id : '' }}"/>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">{{trans('resource.name')}}</label>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" name="name" class="" value="{{(!empty($sysClient)) ? $sysClient->name : ''}}"/>
+                    <input type="text" class="form-control" name="name" class="" value="{{(!empty($mapCategory)) ? $mapCategory->value : ''}}"/>
                   </div>
                 </div>
-
 
                 <div class="form-group usticky" style="background: #fff;">
                   <div class="col-md-12">
                     <div style="float: right;">
-                      <button type="button" class="btn btn-primary" onclick="sysclients.save();">{{trans('resource.buttons.save')}}</button>
-                      <button type="button" class="btn" onclick="uPage.close('window_clientsRegister')">{{trans('resource.buttons.close')}}</button>
+                      <button type="button" class="btn btn-primary" onclick="sysmapcat.save();">{{trans('resource.buttons.save')}}</button>
+                      <button type="button" class="btn" onclick="uPage.close('window_mapCatRegister')">{{trans('resource.buttons.close')}}</button>
                     </div>
                   </div>
                 </div>

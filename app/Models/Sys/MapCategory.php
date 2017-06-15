@@ -5,16 +5,16 @@ namespace App\Models\Sys;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SysClient
+ * Class MapCategory
  */
-class SysClient extends Model
+class MapCategory extends Model
 {
-    protected $table = 'sys_clients';
+    protected $table = 'map_category';
 
     public $timestamps = false;
 
     protected $fillable = [
-        'name'
+        'value'
     ];
 
     protected $guarded = [];
