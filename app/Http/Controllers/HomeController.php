@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Views\Vw_news;
+use App\Models\Views\Vw_category;
 use App\Models\Sys\Views\Vw_sys_map;
 use App\Models\Sys\MapCategory;
 use App\Models\ContentCat;
@@ -54,6 +55,41 @@ class HomeController extends Controller
     }
 
     public function phoneMail(){
+      \Debugbar::disable();
       return view('phone.mail');
+    }
+
+    public function phoneNews(Request $request){
+        \Debugbar::disable();
+        $vw_news = new Vw_news;
+        $menu = 0;
+
+        $vw_category = Vw_category::fromViewShowed()->get();
+
+        if(!empty($request->cat_id)){
+          $vw_news = Vw_news::ByCategory($request->cat_id, 20)->get();
+        }else{
+          $menu = 1;
+          $vw_news = Vw_news::MainNews()->get();
+        }
+
+        if($request->type == 1){
+            $menu = 0;
+        }
+
+        return \View::make('phone.news')->with(compact('vw_news','vw_category', 'menu'));
+    }
+
+    public function phoneNewsDetail(Request $request){
+        \Debugbar::disable();
+        $vw_news = new Vw_news;
+
+        $vw_category = Vw_category::fromViewShowed()->get();
+
+        if(!empty($request->id)){
+          $vw_news = Vw_news::ById($request->id)->get();
+        }
+
+        return \View::make('phone.newsDetail')->with(compact('vw_news'));
     }
 }

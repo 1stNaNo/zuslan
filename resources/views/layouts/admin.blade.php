@@ -434,33 +434,33 @@
                 </ul>
               </li>
 
-              <li class="">
+              {{-- <li class="">
                 <a href="/admin/weblink">
                   <i class="fa fa-link" aria-hidden="true"></i>
                   <span>{{trans('resource.weblinks.link')}}</span>
                 </a>
-              </li>
+              </li> --}}
 
-              <li class="">
+              {{-- <li class="">
                 <a href="/admin/decision">
                   <i class="fa fa-file-text-o" aria-hidden="true"></i>
                   <span>{{trans('resource.decision.menu')}}</span>
                 </a>
-              </li>
+              </li> --}}
 
-              <li class="">
+              {{-- <li class="">
                 <a href="/admin/poll">
                   <i class="fa fa-pie-chart" aria-hidden="true"></i>
                   <span>{{trans('resource.polling')}}</span>
                 </a>
-              </li>
+              </li> --}}
 
-              <li class="">
+              {{-- <li class="">
                 <a href="/admin/banner">
                   <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
                   <span>{{trans('resource.banner.banner')}}</span>
                 </a>
-              </li>
+              </li> --}}
 
               <li class="nav-parent">
                 <a>
@@ -509,7 +509,7 @@
                   <span>{{trans('resource.weblinks.img')}}</span>
                 </a>
               </li>
-              <li class="nav-parent">
+              {{-- <li class="nav-parent">
                 <a>
                   <i class="fa fa-columns" aria-hidden="true"></i>
                   <span>{{trans('resource.file.files')}}</span>
@@ -531,7 +531,7 @@
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> --}}
             </ul>
           </nav>
 

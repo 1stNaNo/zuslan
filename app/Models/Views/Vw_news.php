@@ -72,4 +72,12 @@ class Vw_news extends Model
       }
       $query->from(self::$vw)->whereLang(\Session::get("lang"))->where('title', 'like', '%' . $keyword . '%')->groupBy("id");
     }
+
+    public function scopeByCategoryNoP($query, $cat_id){
+      $query->from(self::$vw)->whereLang(\Session::get("lang"))->whereCat_id($cat_id)->whereActive_flag(1);
+    }
+
+    public function scopeMainNews($query){
+        $query->from(self::$vw)->whereLang(\Session::get("lang"))->whereActive_flag(1)->groupBy("id")->orderBy('insert_date','desc')->paginate(20);
+    }
 }

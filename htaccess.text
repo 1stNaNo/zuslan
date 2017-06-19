@@ -4,14 +4,45 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteBase /
-   # change above to your site i.e.,  RewriteBase /whatever/public/
+    RewriteBase /public/
 
-    # Redirect Trailing Slashes...
+    RewriteCond %{THE_REQUEST} ^GET\ /photos/
+    RewriteRule ^photos/(.*) /public/photos/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /assets/
+    RewriteRule ^assets/(.*) /public/assets/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /css/
+    RewriteRule ^css/(.*) /public/css/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /files/
+    RewriteRule ^files/(.*) /public/files/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /fonts/
+    RewriteRule ^fonts/(.*) /public/fonts/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /img/
+    RewriteRule ^img/(.*) /public/img/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /js/
+    RewriteRule ^js/(.*) /public/js/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /vendo/
+    RewriteRule ^vendo/(.*) /public/vendo/$1 [L,R=301]
+
+    RewriteCond %{THE_REQUEST} ^GET\ /vendor/
+    RewriteRule ^vendor/(.*) /public/vendor/$1 [L,R=301]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>

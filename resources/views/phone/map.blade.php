@@ -1,23 +1,23 @@
-    <div id="map" style="height: 400px;"></div>
+
     <script type="text/javascript">
         $(document).ready(function(){
           getCurrentLocation();
         });
 
         var map;
-        var currentLocation;
         var markers = {};
         var directionsService;
         var directionsDisplay;
         var matrixService;
 
         function initMap() {
-
           directionsService = new google.maps.DirectionsService;
           directionsDisplay = new google.maps.DirectionsRenderer;
           matrixService = new google.maps.DistanceMatrixService;
 
-          map = new google.maps.Map(document.getElementById('map'), {
+          $("#mapList").html('');
+
+          map = new google.maps.Map(document.getElementById('mapCont'), {
             zoom: 15,
             center: currentLocation
           });
@@ -81,15 +81,11 @@
 
                 var html = '';
 
-                html += '<li>';
-                html +=  '<a href="#" class="item-link item-content" onclick="getRoute({{$item->id}})">';
-                html +=    '<div class="item-inner">';
-                html +=      '<div class="item-title-row">';
-                html +=        '<div class="item-title">Нэр: {{$item->name}} </div>';
-                html +=      '</div>';
-                html +=      '<div class="item-subtitle">Зай: '+ result.distance.text +'</div>';
-                html +=      '<div class="item-text">Хугацаа: '+ result.duration.text +'</div>';
-                html +=    '</div>';
+                html += '<li onclick="getRoute({{$item->id}})">';
+                html +=  '<a href="#" class="close-panel">';
+                html +=      'Нэр: {{$item->name}} </br>';
+                html +=      'Зай: '+ result.distance.text +'</br>';
+                html +=      'Хугацаа: '+ result.duration.text +'</br>';
                 html +=  '</a>';
                 html += '</li>';
 
@@ -181,25 +177,5 @@
               center: center,
               radius: Math.sqrt(radius) * 100
           });
-        }
-
-        function getCurrentLocation(){
-          // Try HTML5 geolocation.
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-              };
-
-              currentLocation = pos;
-              initMap();
-            }, function() {
-              console.log("GET LOCATION ERROR");
-            });
-          } else {
-            // Browser doesn't support Geolocation
-            console.log("BROWSER DOESNT SUPPORT");
-          }
         }
     </script>

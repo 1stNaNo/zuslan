@@ -65,11 +65,15 @@
         var currentLocation;
         var cityCircle;
         var markers = {};
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        var matrixService = new google.maps.DistanceMatrixService;
+        var directionsService;
+        var directionsDisplay;
+        var matrixService;
 
         function initMap() {
+
+          directionsService = new google.maps.DirectionsService;
+          directionsDisplay = new google.maps.DirectionsRenderer;
+          matrixService = new google.maps.DistanceMatrixService;
 
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
@@ -171,6 +175,7 @@
         }
 
         function getRoute(id){
+
           closeInfo();
           markers[id]["info"].open(map, markers[id]["marker"]);
           directionsService.route({
@@ -227,9 +232,9 @@
 
               currentLocation = pos;
               initMap();
-            }, function() {
-              console.log("GET LOCATION ERROR");
-            });
+            }, function(error) {
+              console.log(error);
+            },{timeout: 30000, enableHighAccuracy: true, maximumAge: 75000});
           } else {
             // Browser doesn't support Geolocation
             console.log("BROWSER DOESNT SUPPORT");
