@@ -2877,7 +2877,8 @@
             "laravel",
             "model",
             "schema"
-        ]
+        ],
+        "abandoned": "reliese/laravel"
     },
     {
         "name": "maximebf/debugbar",
@@ -5225,5 +5226,97 @@
             "lumen",
             "sdk"
         ]
+    },
+    {
+        "name": "jaybizzle/crawler-detect",
+        "version": "v1.2.50",
+        "version_normalized": "1.2.50.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+            "reference": "c9638a5d7d6fc4ecfb35f32a9cc6d05bc4f5a914"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/c9638a5d7d6fc4ecfb35f32a9cc6d05bc4f5a914",
+            "reference": "c9638a5d7d6fc4ecfb35f32a9cc6d05bc4f5a914",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.8.*",
+            "satooshi/php-coveralls": "1.*"
+        },
+        "time": "2017-07-03T20:56:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Jaybizzle\\CrawlerDetect\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mark Beech",
+                "email": "m@rkbee.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+        "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+        "keywords": [
+            "crawler",
+            "crawler detect",
+            "crawler detector",
+            "crawlerdetect",
+            "php crawler detect"
+        ]
+    },
+    {
+        "name": "kryptonit3/counter",
+        "version": "5.2.6",
+        "version_normalized": "5.2.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Kryptonit3/Counter.git",
+            "reference": "a2521b13570fa673bf1810b6bb3020daf1276573"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Kryptonit3/Counter/zipball/a2521b13570fa673bf1810b6bb3020daf1276573",
+            "reference": "a2521b13570fa673bf1810b6bb3020daf1276573",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.*",
+            "jaybizzle/crawler-detect": "1.*",
+            "php": ">=5.3.3",
+            "ramsey/uuid": "~3.0"
+        },
+        "time": "2017-04-26T22:17:53+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Kryptonit3\\Counter\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jesse Szypulski",
+                "email": "jesse.szypulski@gmail.com"
+            }
+        ],
+        "description": "Hit counter for your pages."
     }
 ]

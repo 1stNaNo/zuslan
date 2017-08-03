@@ -6,36 +6,34 @@
 
     <article class="post">
 
-      <div class="post-image">
-        <span class="thumb-info thumb-info-hide-wrapper-bg">
-          <span class="thumb-info-wrapper">
-            <img class="img-responsive" src="{{$news->thumbnail}}" alt="">
-          </span>
-        </span>
-      </div>
+      <!-- <div class="post-image">
 
-      <section class="page-header">
+      </div> -->
+
+      <!-- <section class="page-header"> -->
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
-              <h4 style="color: white; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{$news->title}}</h4>
+            <div class="col-md-6" style="padding:0 !important">
+              <h2 style="color: black; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{$news->title}}</h2>
             </div>
           </div>
         </div>
-      </section>
+      <!-- </section> -->
 
       <div class="post-content">
         <div class="post-meta">
           <span><i class="fa fa-comments"></i> {{$news->comment_count}}</span>
           <span><i class="fa fa-eye"></i> {{$news->views}}</span>
           <span><a href="/category/{{$news->cat_id}}" class="text-decoration-none"><i class="fa fa-tag"></i> {{$news->ca_title}}</a></span>
-          <span class="pull-right"><i class="fa fa-calendar-check-o"></i> {{$news->insert_date}}</span>
+          <span class="pull-right"><i class="fa fa-calendar-check-o"></i> {{\Carbon\Carbon::parse($news->insert_date)->format('Y-m-d')}}</span>
         </div>
       </div>
 
       <hr class="tall">
       <!-- POST BODY -->
       <div class="post-content">
+
+        <img class="img-responsive pull-left" src="{{$news->thumbnail}}" alt="" style="width: 600px !important; margin: 20px !important;">
         {!!$news->source!!}
       </div>
 
@@ -58,7 +56,7 @@
                   <strong>{{$c->name}}</strong>
                 </span>
                 <p>{{$c->comment}}</p>
-                <span class="date pull-right">{{$c->insert_date}}</span>
+                <span class="date pull-right">{{\Carbon\Carbon::parse($c->insert_date)->format('Y-m-d')}}</span>
               </div>
             </div>
           </li>

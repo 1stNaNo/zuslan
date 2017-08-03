@@ -28,7 +28,11 @@
       </div>
       <div class="row">
         <div class="col-md-12">
+<<<<<<< Updated upstream
           <button type="submit" class="btn btn-primary btn-lg mb-xlg">Илгээх</button>
+=======
+          <input type="submit" onclick="$.blockUI()" value="Илгээх" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
+>>>>>>> Stashed changes
         </div>
       </div>
 

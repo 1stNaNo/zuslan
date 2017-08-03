@@ -164,6 +164,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Kryptonit3\Counter\CounterServiceProvider::class,
 
 
         /*
@@ -243,6 +244,7 @@ return [
         'Laracurl'  =>  Zjango\Laracurl\Facades\Laracurl::class,
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Counter' => Kryptonit3\Counter\Facades\CounterFacade::class,
     ],
 
     'Datatables' => Yajra\Datatables\Facades\Datatables::class,

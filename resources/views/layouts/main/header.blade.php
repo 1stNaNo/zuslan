@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title></title>
+  <title>Нийслэлийн Байгаль орчны газар</title>
 
-  <meta name="keywords" content="{{trans('resource.logoText')}}" />
-  <meta name="description" content="{{trans('resource.logoText')}} {{trans('resource.logoTag')}}">
+  <meta name="keywords" content="Нийслэлийн Байгаль орчны газар" />
+  <meta name="description" content="Нийслэлийн Байгаль орчны газар">
   <meta name="author" content="Unity Source LLC">
 
   <!-- Favicon -->

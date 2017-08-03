@@ -9,13 +9,14 @@
         "andywer/js-localization": "dev-laravel-5",
         "barryvdh/laravel-debugbar": "^2.3",
         "intervention/image": "^2.3",
+        "kryptonit3/counter": "5.2.*",
         "laravel/framework": "5.3.*",
+        "sammyk/laravel-facebook-sdk": "^3.0",
         "unisharp/laravel-ckeditor": "^4.5",
         "unisharp/laravel-filemanager": "^1.7",
         "yajra/laravel-datatables-oracle": "^6.0",
         "zizaco/entrust": "5.2.x-dev",
-        "zjango/laracurl": "dev-master",
-        "sammyk/laravel-facebook-sdk": "^3.0"
+        "zjango/laracurl": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

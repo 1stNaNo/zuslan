@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $news = Vw_news::latestNews()->paginate(9);
+      $news = Vw_news::latestNews()->get();
       $viewnews = Vw_news::mostViewed()->get();
       $commentnews = Vw_news::mostComment()->get();
 

@@ -168,12 +168,12 @@ h6.text-shadow {
 }
 
 .heading.heading-bottom-border h1 {
-	border-bottom: 5px solid #DBDBDB;
+	border-bottom: 1px solid #DBDBDB;
 	padding-bottom: 10px;
 }
 
 .heading.heading-bottom-border h2, .heading.heading-bottom-border h3 {
-	border-bottom: 2px solid #DBDBDB;
+	border-bottom: 1px solid #DBDBDB;
 	padding-bottom: 10px;
 }
 
@@ -183,12 +183,12 @@ h6.text-shadow {
 }
 
 .heading.heading-bottom-double-border h1, .heading.heading-bottom-double-border h2, .heading.heading-bottom-double-border h3 {
-	border-bottom: 3px double #DBDBDB;
+	border-bottom: 1px double #DBDBDB;
 	padding-bottom: 10px;
 }
 
 .heading.heading-bottom-double-border h4, .heading.heading-bottom-double-border h5, .heading.heading-bottom-double-border h6 {
-	border-bottom: 3px double #DBDBDB;
+	border-bottom: 1px double #DBDBDB;
 	padding-bottom: 5px;
 }
 

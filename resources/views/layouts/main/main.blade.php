@@ -11,7 +11,7 @@
               <div class="header-column">
                 <div class="header-logo">
                   <a href="/">
-                    <img alt="" width="60" height="60" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="/img/logo-niislel.gif">
+                    <img alt="" width="100" height="100" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="/img/logo-niislel.gif">
                   </a>
                 </div>
                 <div class="logoDescripion">
@@ -59,10 +59,10 @@
             @foreach($categories->get() as $c)
               @php $tmpchk = clone $chk; @endphp
               @if(count($tmpchk->where('parent_id',$c->ca_id)->get()) == 0)
-                @if(!empty($c->url))
-                <a target="{{$c->target}}" href="{{$c->url}}" style="text-decoration: none;">
-                @else
+                @if($c->url == '#$cat$#')
                 <a target="{{$c->target}}" href="/category/{{$c->ca_id}}" style="text-decoration: none;">
+                @else
+                <a target="{{$c->target}}" href="{{$c->url}}" style="text-decoration: none;">
                 @endif
               @else
                 <a target="{{$c->target}}" href="#" onclick="showSubMenu({{$c->ca_id}})" style="text-decoration: none;">
@@ -83,10 +83,10 @@
         <div class="col-md-8">
           <div class="owl-carousel owl-theme stage-margin" data-plugin-options='{"items": 3, "margin": 10, "loop": false, "nav": true, "dots": false, "stagePadding": 40}' style="margin-top: 20px;">
             @foreach($subcategories->get() as $sc)
-              @if(!empty($sc->url))
-              <a target="{{$sc->target}}" href="{{$sc->url}}" style="text-decoration: none;">
-              @else
+              @if($sc->url == '#$cat$#')
               <a target="{{$sc->target}}" href="/category/{{$sc->ca_id}}" style="text-decoration: none;">
+              @else
+              <a target="{{$sc->target}}" href="{{$sc->url}}" style="text-decoration: none;">
               @endif
               <div class="menu-item-sub sub-item-{{$sc->parent_id}}">
                 <img alt="" class="img-responsive" src="/{{$sc->img}}">

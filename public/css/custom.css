@@ -414,10 +414,14 @@
 /*LOGO TEXT*/
 .logoDescripion {
     float: left !important;
-    margin-top: 26px;
+    margin-top: 30px;
 }
 
 .logoDescripion p.logoTag {
     color: #000;
-    font-size: 20px;
+    font-size: 25px;
+}
+
+.n-item{
+  margin-bottom: 10px;
 }

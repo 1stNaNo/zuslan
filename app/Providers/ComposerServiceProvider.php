@@ -19,6 +19,10 @@ class ComposerServiceProvider extends ServiceProvider
             'layouts.main.main', 'App\Http\ViewComposers\MenuComposer'
         );
 
+        View::composer(
+            'layouts.main.main_nowidget', 'App\Http\ViewComposers\MenuComposer'
+        );
+
     }
 
     /**
