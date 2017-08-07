@@ -13,15 +13,17 @@ class MailBody extends Mailable
 
     public $title;
     public $bodymessage;
+    public $pics;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($title, $bodymessage)
+    public function __construct($title, $bodymessage, $pics)
     {
         $this->title = $title;
         $this->bodymessage = $bodymessage;
+        $this->pics = $pics;
     }
 
     /**
@@ -31,6 +33,6 @@ class MailBody extends Mailable
      */
     public function build()
     {
-        return $this->from('njn046@gmail.com')->view('web.mailbody', ['title'=>$this->title,'bodymessage'=>$this->bodymessage]);
+        return $this->from('njn046@gmail.com')->view('web.mailbody', ['title'=>$this->title,'bodymessage'=>$this->bodymessage, 'pics'=>$this->pics]);
     }
 }

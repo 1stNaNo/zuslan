@@ -256,4 +256,6 @@ Route::any('/phone/newsDetail', 'HomeController@phoneNewsDetail');
 
 Route::get('/search', 'Web\PostController@searchindex')->middleware('lang');
 Route::get('/mail', 'Web\MailController@index');
-Route::post('/sendmail', 'Web\MailController@sendmail');
+Route::any('/sendmail', 'Web\MailController@sendmail');
+Route::any('/phone/sendmail', 'Web\MailController@sendmailPhone');
+Route::get('/contactMail', 'Web\MailController@contact');

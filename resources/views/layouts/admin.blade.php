@@ -92,7 +92,6 @@
 <script src="/assets/vendor/modernizr/modernizr.js"></script>
 <script src="/assets/socketio/socket.io.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAUWXzw9Zx2uyGDcCsGiYu3mKHhqN_00"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script>
 </head>
 <body>
 <section class="body">

@@ -45,6 +45,8 @@
               markers[this.get("id")]["info"].open(map, markers[this.get("id")]["marker"]);
           });
 
+          $("#mapList").html('');
+
           @foreach($map as $item)
             var marker = new google.maps.Marker({
               position: {lat: {{$item->latitude}}, lng: {{$item->longitude}}},
@@ -81,7 +83,7 @@
 
                 var html = '';
 
-                html += '<li onclick="getRoute({{$item->id}})">';
+                html += '<li onclick="getRoute({{$item->id}})" mapid="{{$item->id}}">';
                 html +=  '<a href="#" class="close-panel">';
                 html +=      'Нэр: {{$item->name}} </br>';
                 html +=      'Зай: '+ result.distance.text +'</br>';
@@ -89,8 +91,9 @@
                 html +=  '</a>';
                 html += '</li>';
 
-
-                $("#mapList").append(html);
+                if($("#mapList li[mapid='{{$item->id}}']").length <= 0){
+                  $("#mapList").append(html);
+                }
               }
             });
 

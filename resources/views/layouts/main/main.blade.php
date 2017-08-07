@@ -59,7 +59,13 @@
             @foreach($categories->get() as $c)
               @php $tmpchk = clone $chk; @endphp
               @if(count($tmpchk->where('parent_id',$c->ca_id)->get()) == 0)
+<<<<<<< Updated upstream
                 @if($c->url == '#$cat$#')
+=======
+                @if($c->url != '#$cat$#')
+                <a target="{{$c->target}}" href="{{$c->url}}" style="text-decoration: none;">
+                @else
+>>>>>>> Stashed changes
                 <a target="{{$c->target}}" href="/category/{{$c->ca_id}}" style="text-decoration: none;">
                 @else
                 <a target="{{$c->target}}" href="{{$c->url}}" style="text-decoration: none;">
@@ -83,7 +89,13 @@
         <div class="col-md-8">
           <div class="owl-carousel owl-theme stage-margin" data-plugin-options='{"items": 3, "margin": 10, "loop": false, "nav": true, "dots": false, "stagePadding": 40}' style="margin-top: 20px;">
             @foreach($subcategories->get() as $sc)
+<<<<<<< Updated upstream
               @if($sc->url == '#$cat$#')
+=======
+              @if($sc->url != '#$cat$#')
+              <a target="{{$sc->target}}" href="{{$sc->url}}" style="text-decoration: none;">
+              @else
+>>>>>>> Stashed changes
               <a target="{{$sc->target}}" href="/category/{{$sc->ca_id}}" style="text-decoration: none;">
               @else
               <a target="{{$sc->target}}" href="{{$sc->url}}" style="text-decoration: none;">
